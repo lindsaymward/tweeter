@@ -1,3 +1,8 @@
+main.container {
+  display: flex;
+  flex-direction: column;
+}
+
 section.new-tweet {
   width: 100%;
 }
@@ -31,7 +36,7 @@ textarea {
 }
  
 form div {
-  margin-top: 0.5em;
+  margin: 0.5em 0;
   display: flex;
   justify-content: space-between;
 }
@@ -41,7 +46,12 @@ button {
   color: white;
   background-color: #4056A1;
   border: 2px solid #4056A1;
-  box-shadow: 3px 5px #545149;
+  box-shadow: 3px 5px rgba(84, 81, 73, 0.7);
+}
+
+button:hover {
+  color: #D2C38E;
+  transition: all 180ms ease;
 }
 
 .counter {
@@ -49,5 +59,52 @@ button {
 }
 
 .red {
-  color: red;
+  color: #ec3d21;
+}
+
+.tweet-feed {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet {
+  border: 4px solid #4056A1;
+  margin: 0.75em 0;
+}
+
+.tweet:hover {
+  box-shadow:5px 5px rgba(84, 81, 73, 0.4);
+  transition: all 150ms ease;
+}
+
+.tweet header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1em;
+}
+
+.tweet header h3 {
+  display:inline;
+}
+
+.tweet header h4 {
+  opacity: 0.5;
+}
+
+.tweet-body {
+  border-bottom: 4px solid #4056A1;
+  padding-bottom: 1em;
+  margin: 0.5em 1em;
+}
+
+.tweet footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5em 1.5em;
+}
+
+.tweet footer p {
+  margin: 0;
 }
