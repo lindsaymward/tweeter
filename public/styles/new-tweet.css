@@ -92,6 +92,17 @@ button:hover {
   opacity: 0.5;
 }
 
+.tweet img {
+  width: 2em;
+  height: 2em;
+  margin: 0 0.5em 0 0;
+}
+
+.tweet header span {
+  display: flex;
+  align-items: center;
+}
+
 .tweet-body {
   border-bottom: 4px solid #4056A1;
   padding-bottom: 1em;
