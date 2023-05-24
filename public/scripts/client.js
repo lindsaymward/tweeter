@@ -10,12 +10,12 @@ $('document').ready(function() {
     let $tweet = $(`<article class="tweet">
     <header>
       <span>
-        <img src=${tweet.user.avatars} />
-        <h3>${tweet.user.name}</h3>
+        <img src=${escape(tweet.user.avatars)} />
+        <h3>${escape(tweet.user.name)}</h3>
       </span>
-      <h4>${tweet.user.handle}</h4>
+      <h4>${escape(tweet.user.handle)}</h4>
     </header>
-    <p class="tweet-body">${tweet.content.text}</p>
+    <p class="tweet-body">${escape(tweet.content.text)}</p>
     <footer>
       <p>${timePosted}</p>
       <span>
@@ -26,25 +26,43 @@ $('document').ready(function() {
     </footer>
   </article>`);
     return $tweet;
-  }
+  };
 
   const renderTweets = function(tweets) {
+    $('.tweet-feed').empty();
     tweets.forEach(function(tweet) {
       const newTweet = createTweetElement(tweet);
-      $('.tweet-feed').append(newTweet);
-    })
-  }
-  
+      $('.tweet-feed').prepend(newTweet);
+    });
+  };
+
   $("#tweet-form").on("submit", function(event) {
     event.preventDefault();
-    $.post("/tweets", $(this).serialize());
+    const tweetText = $(this).serialize();
+    $('.error p').detach();
+    $('.error i').detach();
+    if (tweetText === "text=") {
+      $('.error').append('<i class="fa-solid fa-circle-exclamation"></i><p>Please enter a tweet first</p>');
+      return $('.error').slideDown('fast');
+    }
+    if (tweetText.length > 145) {
+      $('.error').append('<i class="fa-solid fa-circle-exclamation"></i><p>Your tweet is over the 140 character limit</p>');
+      return $('.error').slideDown('fast');
+    }
+    $('.error').slideUp();
+    $.post("/tweets", tweetText)
+      .then(loadTweets);
   });
 
   const loadTweets = function() {
-    $.get('/tweets', null, function(data) {
-      renderTweets(data);
-    }, 'json');
-  }
+    $.get('/tweets', null, renderTweets, 'json');
+  };
+
+  const escape = function(str) {
+    let div = document.createElement("article");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   loadTweets();
 });
