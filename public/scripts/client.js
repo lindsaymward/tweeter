@@ -34,6 +34,10 @@ $('document').ready(function() {
     })
   }
   
+  $("#tweet-form").on("submit", function(event) {
+    event.preventDefault();
+    $.post("/tweets", $(this).serialize());
+  });
   
   // Test / driver code (temporary). Eventually will get this from the server.
   const data = [
