@@ -39,17 +39,19 @@ $('document').ready(function() {
   $("#tweet-form").on("submit", function(event) {
     event.preventDefault();
     const tweetText = $(this).serialize();
+    $('.error').slideUp();
     $('.error p').detach();
     $('.error i').detach();
+
     if (tweetText === "text=") {
       $('.error').append('<i class="fa-solid fa-circle-exclamation"></i><p>Please enter a tweet first</p>');
-      return $('.error').slideDown('fast');
+      return $('.error').slideDown();
     }
     if (tweetText.length > 145) {
       $('.error').append('<i class="fa-solid fa-circle-exclamation"></i><p>Your tweet is over the 140 character limit</p>');
-      return $('.error').slideDown('fast');
+      return $('.error').slideDown();
     }
-    $('.error').slideUp();
+
     $.post("/tweets", tweetText)
       .then(loadTweets);
   });
