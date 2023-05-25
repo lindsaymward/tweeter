@@ -31,6 +31,32 @@ body {
 main {
   display: flex;
   justify-content: center;
+  align-self: center;
   width: 90%;
   background-color: #f4f1ec;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .content {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 160px;
+    padding: 0 40px;
+  }
+
+  .hero {
+    max-width: 33%;
+  }
+
+  main {
+    max-width: 55%;
+  }
 }

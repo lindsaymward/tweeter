@@ -39,7 +39,7 @@ $('document').ready(function() {
   $("#tweet-form").on("submit", function(event) {
     event.preventDefault();
     const tweetText = $(this).serialize();
-    $('.error').slideUp();
+    $('.error').slideUp('fast');
     $('.error p').detach();
     $('.error i').detach();
 
