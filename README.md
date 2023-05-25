@@ -13,6 +13,12 @@ Basic functionality included allows the app to load some pre-determined tweets f
 3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
 
+
+## Screenshots
+
+!["Screenshot of the mobile version"](https://github.com/lindsaymward/tweeter/blob/master/docs/ipadmini-view.png?raw=true)
+!["Screenshot of the desktop version with error message"](https://github.com/lindsaymward/tweeter/blob/master/docs/large-error-view.png?raw=true)
+
 ## Dependencies
 
 - Express
