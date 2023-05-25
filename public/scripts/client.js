@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 // Everything happens after page loads fully:
 $('document').ready(function() {
   // Construct tweet based on data from renderTweets loop:
