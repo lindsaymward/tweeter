@@ -34,7 +34,7 @@ textarea {
   font-weight: bold;
   color: #4056A1;
 }
-
+ 
 form div {
   margin: 0.5em 0;
   display: flex;
@@ -42,7 +42,7 @@ form div {
 }
 
 button {
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
   color: white;
   background-color: #4056A1;
   border: 2px solid #4056A1;
@@ -55,7 +55,7 @@ button:hover {
 }
 
 div.error {
-  color: rgb(236, 61, 33);
+  color: rgba(236, 61, 33);
   display: none;
 }
 
@@ -66,7 +66,7 @@ div.error p {
 }
 
 .counter {
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
 }
 
 .red {
@@ -84,7 +84,7 @@ div.error p {
 }
 
 .tweet:hover {
-  box-shadow: 5px 5px rgba(84, 81, 73, 0.4);
+  box-shadow:5px 5px rgba(84, 81, 73, 0.4);
   transition: all 150ms ease;
 }
 
@@ -96,7 +96,7 @@ div.error p {
 }
 
 .tweet header h3 {
-  display: inline;
+  display:inline;
 }
 
 .tweet header h4 {
