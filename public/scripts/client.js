@@ -4,7 +4,9 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// Everything happens after page loads fully:
 $('document').ready(function() {
+  // Construct tweet based on data from renderTweets loop:
   const createTweetElement = function(tweet) {
     let timePosted = timeago.format(tweet.created_at);
     let $tweet = $(`<article class="tweet">
@@ -28,6 +30,7 @@ $('document').ready(function() {
     return $tweet;
   };
 
+  // Loop through database to individually pass to createTweetElement function
   const renderTweets = function(tweets) {
     $('.tweet-feed').empty();
     tweets.forEach(function(tweet) {
@@ -36,6 +39,7 @@ $('document').ready(function() {
     });
   };
 
+  // AJAX POST request and reload visible tweets. Error handling for tweets that don't fit criteria.
   $("#tweet-form").on("submit", function(event) {
     event.preventDefault();
     const tweetText = $(this).serialize();
@@ -56,16 +60,19 @@ $('document').ready(function() {
       .then(loadTweets);
   });
 
+  // AJAX GET request
   const loadTweets = function() {
     $.get('/tweets', null, renderTweets, 'json');
   };
 
+  // Securing createTweetElement to prevent malicious users from breaking app
   const escape = function(str) {
     let div = document.createElement("article");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+  // Initial load of previous tweets
   loadTweets();
 });
 
