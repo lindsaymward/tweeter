@@ -43,6 +43,24 @@ main {
   width: 100%;
 }
 
+.contact {
+  display: flex;
+  align-items: center;
+  border-top: 4px solid #545149;
+}
+
+.contact a {
+  margin-left: 6px;
+}
+
+.contact i {
+  color: #4056A1;
+}
+
+.contact i:hover {
+  color: #545149;
+}
+
 @media screen and (min-width: 1024px) {
   .content {
     flex-direction: row;
