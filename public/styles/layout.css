@@ -11,6 +11,7 @@ html {
   box-sizing: inherit;
 }
 
+/* SASS Variables */
 /*
  * Global layout stuff
  */
@@ -47,15 +48,13 @@ main {
   align-items: center;
   border-top: 4px solid #545149;
 }
-
 .contact a {
   margin-left: 6px;
 }
-
 .contact i {
   color: #4056A1;
+  transition: all 150ms ease-in-out;
 }
-
 .contact i:hover {
   color: #545149;
 }

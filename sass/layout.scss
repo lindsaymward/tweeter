@@ -10,13 +10,17 @@ html {
   box-sizing: inherit;
 }
 
+/* SASS Variables */
+$bg-color: #f4f1ec;
+$text-color: #545149;
+$main-color: #4056A1;
+
 /*
  * Global layout stuff
  */
-
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color: $text-color;
+  background-color: $bg-color;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
@@ -33,7 +37,7 @@ main {
   justify-content: center;
   align-self: center;
   width: 90%;
-  background-color: #f4f1ec;
+  background-color: $bg-color;
 }
 
 .content {
@@ -46,19 +50,20 @@ main {
 .contact {
   display: flex;
   align-items: center;
-  border-top: 4px solid #545149;
-}
+  border-top: 4px solid $text-color;
 
-.contact a {
-  margin-left: 6px;
-}
+  a {
+    margin-left: 6px;
+  }
 
-.contact i {
-  color: #4056A1;
-}
+  i {
+    color: $main-color;
+    transition: all 150ms ease-in-out;
+  }
 
-.contact i:hover {
-  color: #545149;
+  i:hover {
+    color: $text-color;
+  }
 }
 
 @media screen and (min-width: 1024px) {
