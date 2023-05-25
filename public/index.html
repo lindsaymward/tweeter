@@ -42,8 +42,10 @@
   <!-- Character Counter JS -->
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
-    <!-- Timeago library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Timeago library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -55,41 +57,41 @@
     </span>
   </nav>
 
-<span class="content">
- <header class="hero">
-  <div>
-    <img src="/images/profile-hex.png" />
-  </div>
-  <div>
-    <h2>Lindsay Ward</h2>
-  </div>
- </header>
-
-  <main class="container">
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form action="/tweets" method="POST" id="tweet-form">
-        <label for="tweet-text">Write your tweet here:</label>
-        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-        <div>
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-      <div class="error">
+  <span class="content">
+    <header class="hero">
+      <div>
+        <img src="/images/profile-hex.png" />
       </div>
-    </section>
-    <section class="tweet-feed">
-    </section>
-  </main>
-</span>
+      <div>
+        <h2>Lindsay Ward</h2>
+      </div>
+    </header>
 
-<footer class="contact">
-<p>This app was created by Lindsay Ward</p>
-<a href="https://www.linkedin.com/in/lindsaymward21/" target="_blank">
-  <i class="fa-brands fa-linkedin fa-lg"></i>
-</a>
-</footer>
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets" method="POST" id="tweet-form">
+          <label for="tweet-text">Write your tweet here:</label>
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+        <div class="error">
+        </div>
+      </section>
+      <section class="tweet-feed">
+      </section>
+    </main>
+  </span>
+
+  <footer class="contact">
+    <p>This app was created by Lindsay Ward</p>
+    <a href="https://www.linkedin.com/in/lindsaymward21/" target="_blank">
+      <i class="fa-brands fa-linkedin fa-lg"></i>
+    </a>
+  </footer>
 </body>
 
 </html>
