@@ -31,31 +31,32 @@ $('document').ready(function() {
 
   // Loop through database to individually pass to createTweetElement function
   const renderTweets = function(tweets) {
-    $('.tweet-feed').empty();
+    const $container = $('.tweet-feed').empty();
     tweets.forEach(function(tweet) {
       const newTweet = createTweetElement(tweet);
-      $('.tweet-feed').prepend(newTweet);
+      $container.prepend(newTweet);
     });
   };
 
   // AJAX POST request and reload visible tweets. Error handling for tweets that don't fit criteria.
   $("#tweet-form").on("submit", function(event) {
     event.preventDefault();
-    const tweetText = $(this).serialize();
-    $('.error').slideUp('fast');
-    $('.error p').detach();
-    $('.error i').detach();
+    const $tweetText = $(this).serialize();
+    const $input = $(this).find('#tweet-text');
+    const $error = $(this).next();
+    $error.slideUp('fast');
+    $error.children().detach();
 
-    if ($('#tweet-text')[0].value === "") {
-      $('.error').append('<i class="fa-solid fa-circle-exclamation"></i><p>Please enter a tweet first</p>');
-      return $('.error').slideDown();
+    if ($input[0].value === "") {
+      $error.append('<i class="fa-solid fa-circle-exclamation"></i><p>Please enter a tweet first</p>');
+      return $error.slideDown();
     }
-    if ($('#tweet-text')[0].value.length > 140) {
-      $('.error').append('<i class="fa-solid fa-circle-exclamation"></i><p>Your tweet is over the 140 character limit</p>');
-      return $('.error').slideDown();
+    if ($input[0].value.length > 140) {
+      $error.append('<i class="fa-solid fa-circle-exclamation"></i><p>Your tweet is over the 140 character limit</p>');
+      return $error.slideDown();
     }
 
-    $.post("/tweets", tweetText)
+    $.post("/tweets", $tweetText)
       .then(loadTweets);
   });
 
