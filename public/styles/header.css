@@ -15,3 +15,13 @@ h2 {
 img {
   margin-top: 2em;
 }
+
+@media screen and (max-width: 1023px) {
+  .hero {
+    background-color: #4056A1;
+    background-image: none;
+  }
+  .hero h2 {
+    color: white;
+  }
+}

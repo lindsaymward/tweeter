@@ -1,3 +1,5 @@
+$main-color: #4056A1;
+
 .hero {
   height: 520px;
   width: 100%;
@@ -14,4 +16,15 @@ h2 {
 
 img {
   margin-top: 2em;
+}
+
+@media screen and (max-width: 1023px) {
+  .hero {
+    background-color: $main-color;
+    background-image: none;
+
+    h2 {
+      color: white;
+    }
+  }
 }
