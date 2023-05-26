@@ -34,6 +34,11 @@ nav i {
 .write-tweet i {
   margin-top: 0.25em;
 }
+.write-tweet button {
+  background-color: #4056A1;
+  color: white;
+  border: none;
+}
 
 @media screen and (min-width: 1024px) {
   nav .logo {
