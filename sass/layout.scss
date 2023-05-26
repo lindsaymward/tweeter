@@ -73,13 +73,12 @@ main {
   .content {
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
     margin-top: 160px;
     padding: 0 40px;
-  }
 
-  .hero {
-    max-width: 33%;
+    .hero {
+      max-width: 33%;
+    }
   }
 
   main {
