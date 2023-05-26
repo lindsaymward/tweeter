@@ -16,6 +16,9 @@ nav .logo {
   font-family: "Bungee", sans-serif;
   font-size: 1.25em;
 }
+nav button {
+  box-shadow: none;
+}
 nav i {
   color: #D2C38E;
 }

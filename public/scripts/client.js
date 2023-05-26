@@ -1,5 +1,10 @@
 // Everything happens after page loads fully:
 $('document').ready(function() {
+  // Click animated arrow in nav to auto-focus to form textarea
+  $('#write-button').on('click', function() {
+    $('#tweet-text').focus();
+  });
+
   // Construct tweet based on data from renderTweets loop:
   const createTweetElement = function(tweet) {
     let timePosted = timeago.format(tweet.created_at);
