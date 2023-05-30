@@ -2,6 +2,7 @@
 $('document').ready(function() {
   // Click animated arrow in nav to auto-focus to form textarea
   $('#write-button').on('click', function() {
+    $('#tweet-form').slideToggle();
     $('#tweet-text').focus();
   });
 

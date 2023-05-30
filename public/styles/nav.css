@@ -19,6 +19,9 @@ nav .logo {
 nav button {
   box-shadow: none;
 }
+nav button:hover {
+  cursor: pointer;
+}
 nav i {
   color: #D2C38E;
 }
