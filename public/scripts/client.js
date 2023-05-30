@@ -10,6 +10,7 @@ $('document').ready(function() {
   const onClick = function() {
     $('#tweet-form').slideToggle();
     $('#tweet-text').focus();
+    $('.error').hide();
   };
 
   // Construct tweet based on data from renderTweets loop:
