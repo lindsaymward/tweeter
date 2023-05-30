@@ -1,10 +1,16 @@
 // Everything happens after page loads fully:
 $('document').ready(function() {
+    // Initial load of previous tweets
+    loadTweets();
+    $('#write-button').on('click', onClick);
+    $("#tweet-form").on("submit", onSubmit);
+  });
+
   // Click animated arrow in nav to auto-focus to form textarea
-  $('#write-button').on('click', function() {
+  const onClick = function() {
     $('#tweet-form').slideToggle();
     $('#tweet-text').focus();
-  });
+  };
 
   // Construct tweet based on data from renderTweets loop:
   const createTweetElement = function(tweet) {
@@ -12,12 +18,12 @@ $('document').ready(function() {
     let $tweet = $(`<article class="tweet">
     <header>
       <span>
-        <img src=${escape(tweet.user.avatars)} />
-        <h3>${escape(tweet.user.name)}</h3>
+        <img src=${doEscape(tweet.user.avatars)} />
+        <h3>${doEscape(tweet.user.name)}</h3>
       </span>
-      <h4>${escape(tweet.user.handle)}</h4>
+      <h4>${doEscape(tweet.user.handle)}</h4>
     </header>
-    <p class="tweet-body">${escape(tweet.content.text)}</p>
+    <p class="tweet-body">${doEscape(tweet.content.text)}</p>
     <footer>
       <p>${timePosted}</p>
       <span>
@@ -40,7 +46,7 @@ $('document').ready(function() {
   };
 
   // AJAX POST request and reload visible tweets. Error handling for tweets that don't fit criteria.
-  $("#tweet-form").on("submit", function(event) {
+  const onSubmit = function(event) {
     event.preventDefault();
     const $tweetText = $(this).serialize();
     const $input = $(this).find('#tweet-text');
@@ -59,7 +65,7 @@ $('document').ready(function() {
 
     $.post("/tweets", $tweetText)
       .then(loadTweets);
-  });
+  };
 
   // AJAX GET request
   const loadTweets = function() {
@@ -67,13 +73,8 @@ $('document').ready(function() {
   };
 
   // Securing createTweetElement to prevent malicious users from breaking app
-  const escape = function(str) {
+  const doEscape = function(str) {
     let div = document.createElement("article");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-
-  // Initial load of previous tweets
-  loadTweets();
-});
-
