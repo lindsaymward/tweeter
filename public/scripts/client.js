@@ -2,6 +2,8 @@
 $('document').ready(function() {
     // Initial load of previous tweets
     loadTweets();
+
+    // Event listeners
     $('#write-button').on('click', onClick);
     $("#tweet-form").on("submit", onSubmit);
   });
